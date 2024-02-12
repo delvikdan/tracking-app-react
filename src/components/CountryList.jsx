@@ -17,7 +17,6 @@ function CountryList({ cities, isLoading }) {
     else return arr;
   }, []);
 
-  console.log(countries);
   if (!cities.length)
     return (
       <Message message="Add your first city by clicking on a city on the map" />
@@ -25,7 +24,7 @@ function CountryList({ cities, isLoading }) {
   return (
     <ul className={styles.countryList}>
       {countries.map((country) => (
-        <CountryItem country={country} />
+        <CountryItem country={country} key={country.country} />
       ))}
     </ul>
   );
